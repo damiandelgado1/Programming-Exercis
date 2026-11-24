@@ -9,7 +9,7 @@ function totalPayment(accountAmount: number, tipPercentaje: number) {
 }    
 
 // Call the function with the bill amount and tip percentaje
-let payment: number = totalPayment(20, 0.15);
+let payment: number = totalPayment(20, 15);
 
 // Display the total payment in the console
 console.log(`${payment.toFixed(2)}`);

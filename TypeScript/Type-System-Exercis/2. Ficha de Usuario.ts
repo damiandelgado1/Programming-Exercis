@@ -1,7 +1,7 @@
 // Create an object that represents a user with their name, age, and account status
 interface User {
     name: string,
-    year: number,
+    age: number,
     accountState: string
 }
 
@@ -9,11 +9,11 @@ interface User {
 function userCard(user: User) {
 
     // Display the user card information
-    return `${user.name} tiene ${user.year} años y su cuenta esta ${user.accountState}`;
+    return `${user.name} tiene ${user.age} años y su cuenta esta ${user.accountState}`;
 }
 
 // Call the function with the user object
-let userCardInfo = userCard({name: "Damián", year: 21, accountState: "activa"});
+let userCardInfo = userCard({name: "Damián", age: 21, accountState: "activa"});
 
 // Display the user card information
 console.log(userCardInfo);
