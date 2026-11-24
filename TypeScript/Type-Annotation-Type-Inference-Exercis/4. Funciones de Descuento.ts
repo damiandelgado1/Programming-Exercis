@@ -2,14 +2,14 @@
 function calculateFinalPrice(productPrice: number, discountPercentage: number) {
     
         // Calculate the final price
-        const finalPriceProduct = productPrice - discountPercentage;
+        const finalPriceProduct: number = productPrice - discountPercentage;
 
         // Return the final price
         return `El precio final del Producto es: ${finalPriceProduct}`;
 }    
 
 // The percentage has a default value of 10%
-let percentage = 0.10;
+let percentage: number = 0.10;
 
 // Call the function with and without the second argument
 let finalPrice = calculateFinalPrice(2000, percentage);
