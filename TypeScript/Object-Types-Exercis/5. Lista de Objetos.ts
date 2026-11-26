@@ -1,55 +1,75 @@
+// Create a object with the student data
+interface Students {
+    name: string,
+    grade: number
+}
+
 // Create a students list, each one with name and grade
-let studentsList = [
-    {"name": "Mateo", "grade": "6.8"},
-    {"name": "Alejandro", "grade": "5.8"},
-    {"name": "Benjamin", "grade": "5.5"},
-    {"name": "Pedro", "grade": "6.0"},
-    {"name": "Roberto", "grade": "6.2"}
-];
+let studentsList: Students[] = [
+    { name: "Benjamin", grade: 5.0 },
+    { name: "Andres", grade: 3.9 },
+    { name: "Francisco", grade: 5.4 }
+]
 
 // Create a function to return alone the approved students
-function approvedStudents(students: string[]) {
-    
-    // Create a list with all approved students
-    const approvedStudents: string[] = [];
-
-    // Create a list with all reproved students
-    const repprovedStudents: string[] = [];
+function getApprovedStudents(students: Students[]) {
 
     // Loop through the students list
     students.forEach(student => {
         
         // If the student has grade major to 4
-        if (student[0] >= "4.0") {
-            
-            // Add the approved student to the approved students list
-            approvedStudents.push(student);
+        if (student.grade >= 4.0) {
 
             // Indicate the approved student
-            console.log(`Los estudiantes que aprobaron son: ${approvedStudents}`);
-        
+            console.log(`Los estudiantes que aprobaron son: ${student.name}`);
+            
         // If the student has grade minor to 4
         } else {
 
-            // Add the repproved student to the repproved students list
-            repprovedStudents.push(student);
-
             // Indicate the repproved student
-            console.log(`Los estudiantes que reprobaron son: ${repprovedStudents}`);
+            console.log(`Los estudiantes que reprobaron son: ${student.name}`);
         }
     });
 }
 
 // Create a function to return the student with most high grade
+function getBestStudent(students: Students[]) {
+    
+    // Create a variable to storage the student with most high grade
+    let bestStudent = studentsList[0];
 
-    // Obtain the student with most high grade
+    // Loop through the students list
+    students.forEach(student => {
+        
+        // Obtain the student with most high grade
+        if (student.grade > bestStudent.grade) {
+            
+            // Save the student with most high grade
+            bestStudent = student;
 
-    // Display the student with most high grade    
+            // Display the student with most high grade    
+            console.log(`El estudiante con la nota mas alta es: ${bestStudent.name}`);
+        
+        // If there not student with most high grade
+        } else {
 
-// Call the function to enter students with their grade's
+            // Indicate that not there a student with most high grade
+            console.log(`No hay un estudiante con la nota mas alta`);
+        }
+    });
+}
 
-// Display the approved students
+// Call the function to display the approved students
+let approvedStudentsList = getApprovedStudents(studentsList);
 
-// Call the function to enter the student with most high grade
+// Call the function to display the student highest grade
+let bestStudent = getBestStudent(studentsList);
 
-// Display the student with most high grade
+// Test to create a new student
+const newStudent: Students = { name: "Juan", grade: 4.5 };
+
+// Add the new student in the students list
+studentsList.push(newStudent);
+
+// Call the function again to display the approved students
+let approvedStudents = getApprovedStudents(studentsList);
