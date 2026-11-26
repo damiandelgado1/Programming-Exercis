@@ -7,10 +7,10 @@ interface Book {
 }
 
 // Create a function to receive that book
-function bookCard(book: Book) {
+function bookCard(book: Book): string {
 
     // If the book has not any properly
-    if (book.name === undefined || book.author === undefined || book.publishDate || book.availability) {
+    if (book.name === undefined || book.author === undefined || book.publishDate === undefined || book.availability === undefined) {
         
         // Display missing data
         console.log("Faltan datos en el Libro");
@@ -19,7 +19,7 @@ function bookCard(book: Book) {
     } else if (typeof book.publishDate !== "number") {
 
         // Indicate the publish date must be a number type data
-        console.log("La fecha de publicacion del libro debe serun tipo de dato numerico")
+        console.log("La fecha de publicacion del libro debe ser un tipo de dato numerico")
     }
 
     // Return a phrase to describe the book
@@ -27,7 +27,7 @@ function bookCard(book: Book) {
 }
 
 // Call the function to enter the book
-let book = bookCard({name: "Ultimate Python", author: "Nicolas Schurmann", publishDate: 2024, availability: "Disponible"});
+let book: string = bookCard({name: "Ultimate Python", author: "Nicolas Schurmann", publishDate: 2024, availability: "Disponible"});
 
 // Check the reject book compiler that lacks some properties or if has the year was text
 console.log(book);

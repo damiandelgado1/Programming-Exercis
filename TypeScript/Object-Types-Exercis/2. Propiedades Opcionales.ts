@@ -6,7 +6,7 @@ interface Contact {
 }
 
 // Create a function to display contact data and includes the email alone exist
-function displayContactData(contact: Contact) {
+function displayContactData(contact: Contact): string {
 
     // If the email that in contact data
     if (contact.email !== undefined) {
@@ -21,7 +21,7 @@ function displayContactData(contact: Contact) {
 }
 
 // Call the function to enter contact data
-let contactData = displayContactData({name: "Benjamin", phone: 982285401});
+let contactData: string = displayContactData({name: "Benjamin", phone: 982285401});
 
 // Display the contact
 console.log(contactData);

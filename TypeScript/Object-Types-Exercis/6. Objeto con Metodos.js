@@ -3,16 +3,23 @@
 const bankAccount = {
     money: 20,
     // Create a method to enter money
-    enterMoney() {
-        const enterMoney = bankAccount.money += 30;
-        console.log(`Se ingresaron $30 a la cuenta del banco. El dinero actual es: ${enterMoney}`);
+    enterMoney(amount) {
+        this.money += amount;
+        console.log(`Se ingresaron $${amount} a la cuenta del banco. El dinero actual es: $${this.money}`);
+        return this.money;
     },
     // Create a method to remove money
-    removeMoney() {
-        const removeMoney = bankAccount.money -= 10;
-        console.log(`Se retiraron $10 de la cuenta del banco. El dinero actual es: ${removeMoney}`);
+    removeMoney(amount) {
+        this.money -= amount;
+        console.log(`Se retiraron $${amount} de la cuenta del banco. El dinero actual es: $${this.money}`);
+        return this.money;
     }
 };
-// Use the method of the object
-bankAccount.enterMoney();
-bankAccount.removeMoney();
+// Use the method to enter money in bank account
+let enterMoney = bankAccount.enterMoney(50);
+// Display the enter money and current money in the bank account
+console.log(enterMoney);
+// Use the method to remove money in bank account
+let removeMoney = bankAccount.removeMoney(20);
+// Display the remove money and current money in the bank account
+console.log(removeMoney);
